@@ -97,7 +97,7 @@ Sensitivity experiments can vary channel budget, state resolution, calibration g
 
 `metrics.json` reports concentration MAE/RMSE/bias on records with a point, coverage over all records, hull width, component count, abstention and incompatibility rates, readout cost/fraction, latency, repeatability for repeated groups with a fixed reference, and accepted-error rates. Incompatible records count as uncovered and remain in the overall denominators. Accepted-error output gives both the unconditional frequency over all records and the conditional frequency among accepted records, together with the accepted-record count. An absence of accepted records gives a null conditional rate.
 
-`ranges.json` provides concentration-stratified RMSE, coverage, widths, and record counts. `plot` builds charts directly from existing metrics. No experiment values are included before evaluation is run.
+`ranges.json` provides concentration-stratified RMSE, coverage, widths, and record counts. `plot` builds charts directly from existing metrics.
 
 The local geometry diagnostic standardizes the concentration and nuisance Jacobians, projects concentration sensitivity away from nuisance directions, and reports the residual norm. It explains first-order identifiability; the actual returned set still comes from nonlinear cell inversion.
 
@@ -105,4 +105,4 @@ The local geometry diagnostic standardizes the concentration and nuisance Jacobi
 
 Forward models are quadratic to make continuous response enclosures explicit and computable. The supplied inverse baselines are RF and SVR. They are distinct from the task-driven, minimax, mask-conditional, ensemble, and temporal methods discussed in the manuscript. Uniform cells implement the conservative cover; refinement is controlled by rerunning at a finer declared subdivision rather than deleting unresolved cells.
 
-The physical interval expands the reference interval by the supplied reference bound. Its validity requires an independently justified bound; the program does not infer that bound from point-prediction accuracy. Readout fractions describe logical response revelation, and inversion cache bytes describe the retained numerical arrays. They do not estimate heater energy or process peak memory. CI checks syntax and package construction without running training or experiments.
+The physical interval expands the reference interval by the supplied reference bound. Its validity requires an independently justified bound; the program does not infer that bound from point-prediction accuracy. Readout fractions describe logical response revelation, and inversion cache bytes describe the retained numerical arrays. They do not estimate heater energy or process peak memory.
